@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  /* Type */
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  /* Surfaces */
+  --color-page: #010101;
+  --color-glass: rgba(28, 27, 36, 0.15);
+
+  /* Brand gradient family: pink -> orchid -> violet */
+  --color-brand-pink: #fa93fa;
+  --color-brand-orchid: #c967e8;
+  --color-brand-violet: #983ad6;
+
+  /* The pill icon's glow "breathes" (only opacity + transform) */
+  --animate-breathe: breathe 4s ease-in-out infinite;
+
+  @keyframes breathe {
+    0%,
+    100% {
+      opacity: 0.45;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.3);
+    }
+  }
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-page);
+    color: #fff;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
